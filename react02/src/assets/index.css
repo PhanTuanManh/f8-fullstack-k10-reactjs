@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.mp-fullpage-section-pad {
+  @apply md:px-10 px-5;
+}
+
+.mp-dark {
+  @apply bg-black text-white;
+}
