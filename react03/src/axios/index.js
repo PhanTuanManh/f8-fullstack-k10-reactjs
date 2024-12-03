@@ -25,7 +25,7 @@ export const getOne = async (path, id) => {
   }
 };
 
-export const create = async (path, data) => {
+export const createNew = async (path, data) => {
   try {
     const response = await instance.post(`${path}`, data);
     return response.data;
@@ -36,7 +36,7 @@ export const create = async (path, data) => {
 
 export const updateProduct = async (path, id, data) => {
   try {
-    const response = await instance.put(`${path}/${id}`, data);
+    const response = await instance.patch(`${path}/${id}`, data);
     return response.data;
   } catch (error) {
     console.log(error);

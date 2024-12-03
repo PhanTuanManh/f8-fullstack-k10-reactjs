@@ -25,7 +25,7 @@ const HomePage = () => {
     setError(null);
 
     try {
-      const response = await instance.get("/products", {
+      const response = await instance.getAll("/products", {
         params: {
           q: query,
           _start: skip,

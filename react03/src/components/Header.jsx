@@ -1,7 +1,17 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 const Header = () => {
+  const navigate = useNavigate();
+
+  const isLoggedIn = localStorage.getItem("accessToken");
+
+  const handleLogout = () => {
+    localStorage.removeItem("accessToken");
+
+    navigate("/");
+  };
+
   return (
     <header className="fixed top-0 left-0 right-0 bg-white z-[50]">
       <div className="container mx-auto">
@@ -17,19 +27,27 @@ const Header = () => {
               <li className="px-4 mx-[5px]">
                 <NavLink to="/admin/products">Admin Product</NavLink>
               </li>
-              <li className="px-4 mx-[5px]">
-                <NavLink to="">Blog</NavLink>
-              </li>
-              <li className="px-4 mx-[5px]">
-                <NavLink to="">Contact</NavLink>
-              </li>
+
+              {!isLoggedIn && (
+                <>
+                  <li className="px-4 mx-[5px] btn btn-primary">
+                    <NavLink to="/register">Sign Up</NavLink>
+                  </li>
+                  <li className="px-4 mx-[5px] btn btn-secondary">
+                    <NavLink to="/login">Login</NavLink>
+                  </li>
+                </>
+              )}
+
+              {isLoggedIn && (
+                <li className="px-4 mx-[5px]">
+                  <button onClick={handleLogout} className="btn btn-danger">
+                    Logout
+                  </button>
+                </li>
+              )}
             </ul>
           </nav>
-          <div>
-            <div className="flex items-center justify-center">
-              {/* <i className="fa-solid fa-magnifying-glass cursor-pointer"></i> */}
-            </div>
-          </div>
         </div>
       </div>
     </header>

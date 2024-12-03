@@ -1,4 +1,39 @@
 {
+  "users": [
+    {
+      "email": "hoangn@gmail.com",
+      "password": "$2a$10$.nxxqPOrk4wOdA8fvwGSQOwO8OSB.TJOdPj/HhqBj0n.oFtIY7pKW",
+      "id": 1
+    },
+    {
+      "email": "hoangnm@gmail.com",
+      "password": "$2a$10$ikckyiqezrqkuEFUb.CBvOVN0gTnbuSm0VTfXyyQK4nn6Y0dHXD/y",
+      "username": "hoangnm.ndm",
+      "id": 2
+    },
+    {
+      "email": "hoangnsddsdsm@gmail.com",
+      "password": "$2a$10$aoWX3BAf8LN0vmREKT3UCecmH2LxmjD9NzwKxkPQps6LH9lUZXFB2",
+      "username": "hoangnm.ndm",
+      "id": 3
+    },
+    {
+      "email": "manhdeptraivcl@gmail.com",
+      "password": "$2a$10$jl2g5R/Vo3pmOScBCtG0se16iDb7c/P.c3zEfdXmr1.KzY98hbe.m",
+      "firstname": "Manhdeptrai",
+      "id": 4
+    },
+    {
+      "email": "manhphan.0501@gmail.com",
+      "password": "$2a$10$9KNG5fgvGLoKhJXrvwbTPe2Xc6Si2.4uzm0voUitAFcX1CvsDgWIC",
+      "id": 5
+    },
+    {
+      "email": "phantuanmanh.0501@gmail.com",
+      "password": "$2a$10$3aVS2.IPq8VqR0nxfvwq.eopaYB8uuOj5ZfpKQtSR9ZJh9p3fCnw2",
+      "id": 6
+    }
+  ],
   "products": [
     {
       "id": 1,
@@ -9,7 +44,10 @@
       "discountPercentage": 7.17,
       "rating": 4.94,
       "stock": 5,
-      "tags": ["beauty", "mascara"],
+      "tags": [
+        "beauty",
+        "mascara"
+      ],
       "brand": "Essence",
       "sku": "RCH45Q1A",
       "weight": 2,
@@ -66,7 +104,10 @@
       "discountPercentage": 5.5,
       "rating": 3.28,
       "stock": 44,
-      "tags": ["beauty", "eyeshadow"],
+      "tags": [
+        "beauty",
+        "eyeshadow"
+      ],
       "brand": "Glamour Beauty",
       "sku": "MVCFH27F",
       "weight": 3,
@@ -123,7 +164,10 @@
       "discountPercentage": 18.14,
       "rating": 3.82,
       "stock": 59,
-      "tags": ["beauty", "face powder"],
+      "tags": [
+        "beauty",
+        "face powder"
+      ],
       "brand": "Velvet Touch",
       "sku": "9EN8WLT2",
       "weight": 8,
@@ -180,7 +224,10 @@
       "discountPercentage": 19.03,
       "rating": 2.51,
       "stock": 68,
-      "tags": ["beauty", "lipstick"],
+      "tags": [
+        "beauty",
+        "lipstick"
+      ],
       "brand": "Chic Cosmetics",
       "sku": "O5IF1NTA",
       "weight": 5,
@@ -237,7 +284,10 @@
       "discountPercentage": 2.46,
       "rating": 3.91,
       "stock": 71,
-      "tags": ["beauty", "nail polish"],
+      "tags": [
+        "beauty",
+        "nail polish"
+      ],
       "brand": "Nail Couture",
       "sku": "YUIIIP4W",
       "weight": 9,
@@ -294,7 +344,10 @@
       "discountPercentage": 0.32,
       "rating": 4.85,
       "stock": 17,
-      "tags": ["fragrances", "perfumes"],
+      "tags": [
+        "fragrances",
+        "perfumes"
+      ],
       "brand": "Calvin Klein",
       "sku": "DZM2JQZE",
       "weight": 5,
@@ -353,7 +406,10 @@
       "discountPercentage": 18.64,
       "rating": 2.76,
       "stock": 41,
-      "tags": ["fragrances", "perfumes"],
+      "tags": [
+        "fragrances",
+        "perfumes"
+      ],
       "brand": "Chanel",
       "sku": "K71HBCGS",
       "weight": 4,
@@ -412,7 +468,10 @@
       "discountPercentage": 17.44,
       "rating": 3.31,
       "stock": 91,
-      "tags": ["fragrances", "perfumes"],
+      "tags": [
+        "fragrances",
+        "perfumes"
+      ],
       "brand": "Dior",
       "sku": "E70NB03B",
       "weight": 10,
@@ -471,7 +530,10 @@
       "discountPercentage": 11.47,
       "rating": 2.68,
       "stock": 3,
-      "tags": ["fragrances", "perfumes"],
+      "tags": [
+        "fragrances",
+        "perfumes"
+      ],
       "brand": "Dolce & Gabbana",
       "sku": "1NBFK980",
       "weight": 5,
@@ -530,7 +592,10 @@
       "discountPercentage": 8.9,
       "rating": 2.69,
       "stock": 93,
-      "tags": ["fragrances", "perfumes"],
+      "tags": [
+        "fragrances",
+        "perfumes"
+      ],
       "brand": "Gucci",
       "sku": "FFKZ6HOF",
       "weight": 10,
@@ -589,7 +654,10 @@
       "discountPercentage": 0.29,
       "rating": 4.14,
       "stock": 47,
-      "tags": ["furniture", "beds"],
+      "tags": [
+        "furniture",
+        "beds"
+      ],
       "brand": "Annibale Colombo",
       "sku": "4KMDTZWF",
       "weight": 3,
@@ -648,7 +716,10 @@
       "discountPercentage": 18.54,
       "rating": 3.08,
       "stock": 16,
-      "tags": ["furniture", "sofas"],
+      "tags": [
+        "furniture",
+        "sofas"
+      ],
       "brand": "Annibale Colombo",
       "sku": "LUU95CQP",
       "weight": 3,
@@ -707,7 +778,10 @@
       "discountPercentage": 9.58,
       "rating": 4.48,
       "stock": 16,
-      "tags": ["furniture", "bedside tables"],
+      "tags": [
+        "furniture",
+        "bedside tables"
+      ],
       "brand": "Furniture Co.",
       "sku": "OWPLTZYX",
       "weight": 10,
@@ -766,7 +840,10 @@
       "discountPercentage": 15.23,
       "rating": 4.11,
       "stock": 47,
-      "tags": ["furniture", "office chairs"],
+      "tags": [
+        "furniture",
+        "office chairs"
+      ],
       "brand": "Knoll",
       "sku": "RKHVJ4FE",
       "weight": 3,
@@ -825,7 +902,10 @@
       "discountPercentage": 11.22,
       "rating": 3.26,
       "stock": 95,
-      "tags": ["furniture", "bathroom"],
+      "tags": [
+        "furniture",
+        "bathroom"
+      ],
       "brand": "Bath Trends",
       "sku": "7OLTIEVO",
       "weight": 6,
@@ -884,7 +964,9 @@
       "discountPercentage": 1.97,
       "rating": 2.96,
       "stock": 9,
-      "tags": ["fruits"],
+      "tags": [
+        "fruits"
+      ],
       "sku": "QTROUV79",
       "weight": 8,
       "dimensions": {
@@ -940,7 +1022,9 @@
       "discountPercentage": 17.99,
       "rating": 2.83,
       "stock": 96,
-      "tags": ["meat"],
+      "tags": [
+        "meat"
+      ],
       "sku": "BWWA2MSO",
       "weight": 9,
       "dimensions": {
@@ -996,7 +1080,10 @@
       "discountPercentage": 9.57,
       "rating": 2.88,
       "stock": 13,
-      "tags": ["pet supplies", "cat food"],
+      "tags": [
+        "pet supplies",
+        "cat food"
+      ],
       "sku": "C3F8QN6O",
       "weight": 9,
       "dimensions": {
@@ -1052,7 +1139,9 @@
       "discountPercentage": 10.46,
       "rating": 4.61,
       "stock": 69,
-      "tags": ["meat"],
+      "tags": [
+        "meat"
+      ],
       "sku": "G5YEHW7B",
       "weight": 7,
       "dimensions": {
@@ -1109,7 +1198,9 @@
       "discountPercentage": 18.89,
       "rating": 4.01,
       "stock": 22,
-      "tags": ["cooking essentials"],
+      "tags": [
+        "cooking essentials"
+      ],
       "sku": "Q6ZP1UY8",
       "weight": 8,
       "dimensions": {
@@ -1165,7 +1256,9 @@
       "discountPercentage": 11.44,
       "rating": 4.71,
       "stock": 22,
-      "tags": ["vegetables"],
+      "tags": [
+        "vegetables"
+      ],
       "sku": "6KGF2K6Z",
       "weight": 9,
       "dimensions": {
@@ -1221,7 +1314,10 @@
       "discountPercentage": 18.15,
       "rating": 2.74,
       "stock": 40,
-      "tags": ["pet supplies", "dog food"],
+      "tags": [
+        "pet supplies",
+        "dog food"
+      ],
       "sku": "A6QRCH37",
       "weight": 2,
       "dimensions": {
@@ -1277,7 +1373,9 @@
       "discountPercentage": 5.8,
       "rating": 4.46,
       "stock": 10,
-      "tags": ["dairy"],
+      "tags": [
+        "dairy"
+      ],
       "sku": "YA617RI7",
       "weight": 4,
       "dimensions": {
@@ -1333,7 +1431,9 @@
       "discountPercentage": 7,
       "rating": 4.83,
       "stock": 99,
-      "tags": ["seafood"],
+      "tags": [
+        "seafood"
+      ],
       "sku": "XNIH1MTA",
       "weight": 8,
       "dimensions": {
@@ -1389,7 +1489,9 @@
       "discountPercentage": 15.5,
       "rating": 4.28,
       "stock": 89,
-      "tags": ["vegetables"],
+      "tags": [
+        "vegetables"
+      ],
       "sku": "HU7S7VQ0",
       "weight": 7,
       "dimensions": {
@@ -1445,7 +1547,9 @@
       "discountPercentage": 18.51,
       "rating": 4.43,
       "stock": 8,
-      "tags": ["vegetables"],
+      "tags": [
+        "vegetables"
+      ],
       "sku": "Y4RM3JCB",
       "weight": 2,
       "dimensions": {
@@ -1501,7 +1605,9 @@
       "discountPercentage": 1.91,
       "rating": 3.5,
       "stock": 25,
-      "tags": ["condiments"],
+      "tags": [
+        "condiments"
+      ],
       "sku": "BTBNIIOU",
       "weight": 9,
       "dimensions": {
@@ -1557,7 +1663,9 @@
       "discountPercentage": 7.58,
       "rating": 3.77,
       "stock": 76,
-      "tags": ["desserts"],
+      "tags": [
+        "desserts"
+      ],
       "sku": "VEZMU1EQ",
       "weight": 5,
       "dimensions": {
@@ -1616,7 +1724,9 @@
       "discountPercentage": 5.45,
       "rating": 3.41,
       "stock": 99,
-      "tags": ["beverages"],
+      "tags": [
+        "beverages"
+      ],
       "sku": "M2K19S06",
       "weight": 2,
       "dimensions": {
@@ -1672,7 +1782,9 @@
       "discountPercentage": 10.32,
       "rating": 4.37,
       "stock": 1,
-      "tags": ["fruits"],
+      "tags": [
+        "fruits"
+      ],
       "sku": "0X3NORB9",
       "weight": 8,
       "dimensions": {
@@ -1719,8 +1831,5 @@
       ],
       "thumbnail": "https://cdn.dummyjson.com/products/images/groceries/Kiwi/thumbnail.png"
     }
-  ],
-  "total": 194,
-  "skip": 0,
-  "limit": 30
+  ]
 }

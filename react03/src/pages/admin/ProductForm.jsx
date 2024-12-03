@@ -1,121 +1,85 @@
-import axios from "axios";
 import React, { useState, useEffect } from "react";
-import { useLocation, useNavigate, useParams } from "react-router-dom";
-import { create, getOne, updateProduct } from "../../axios";
+import { useLocation, useParams, useNavigate } from "react-router-dom";
+import { createNew, updateProduct, getOne } from "../../axios";
+import { useForm } from "react-hook-form";
+import { v4 as uuid } from "uuid";
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
+
+const productSchema = z.object({
+  title: z.string().min(4, { message: "Tieu de phai lon hon 4 ky tu" }),
+  price: z.number().positive({ message: "Gia phai lon hon 0" }),
+  description: z
+    .string()
+    .min(6, { message: "Mo ta phai lon hon 6 ky tu" })
+    .optional(),
+  // .min(6, { message: "Mo ta phai lon hon 6 ky tu" }),
+});
 
 const ProductForm = () => {
   const nav = useNavigate();
+  const id = useParams().id;
   const [product, setProduct] = useState({
     title: "",
     price: 0,
     description: "",
   });
-  const [errors, setErrors] = useState({
-    title: "",
-    price: "",
-    description: "",
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setProduct({
-      ...product,
-      [name]: value,
-    });
-
-    setErrors({
-      ...errors,
-      [name]: "",
-    });
-  };
-  const validateForm = () => {
-    const newErrors = {};
-
-    if (!product.title.trim()) {
-      newErrors.title = "Tên sản phẩm không được để trống!";
-    }
-
-    if (!product.price || product.price <= 0) {
-      newErrors.price = "Giá sản phẩm phải lớn hơn 0!";
-    }
-
-    if (!product.description.trim()) {
-      newErrors.description = "Mô tả sản phẩm không được để trống!";
-    }
-
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    if (!validateForm()) {
-      return;
-    }
-
-    await create("/products", product);
-    if (window.confirm("Thêm sản phẩm thành công")) {
-      nav("/admin/products");
-    } else {
-      setProduct({
-        title: "",
-        price: 0,
-        description: "",
-      });
-    }
-  };
-
-  const handleUpdate = (e) => {
-    e.preventDefault();
-
-    if (!validateForm()) {
-      return;
-    }
-
-    updateProduct("/products", id, product);
-    if (window.confirm("Sửa sản phẩm thành công")) {
-      nav("/admin/products");
-    } else {
-      setProduct({
-        title: "",
-        price: 0,
-        description: "",
-      });
-    }
-  };
-
-  const location = useLocation();
-  const id = useParams().id;
 
   useEffect(() => {
     if (id) {
-      getOne("/products", id).then((data) => setProduct(data));
+      (async () => {
+        const data = await getOne("/products", id);
+        reset(data);
+      })();
     }
   }, [id]);
+
+  console.log(product);
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm({
+    resolver: zodResolver(productSchema),
+    values: product,
+  });
+
+  const onSubmit = async (product) => {
+    if (id) {
+      await updateProduct("/products", id, product);
+      if (window.confirm("Sửa sản phẩm thành công")) {
+        nav("/admin/products");
+      } else {
+        reset();
+      }
+    } else {
+      product.id = uuid();
+      await createNew("/products", product);
+      if (window.confirm("Thêm sản phẩm thành công")) {
+        nav("/admin/products");
+      } else {
+        reset();
+      }
+    }
+  };
 
   return (
     <div className="container mx-auto">
       <h1 className="text-2xl py-2 mb-2">Thêm sản phẩm</h1>
-      <form
-        onSubmit={
-          useLocation().pathname.includes("update")
-            ? handleUpdate
-            : handleSubmit
-        }
-        className="p-5 bg-white border"
-      >
+      <form onSubmit={handleSubmit(onSubmit)} className="p-5 bg-white border">
         <div className="form-group mb-2">
           <label htmlFor="title">Tên sản phẩm</label>
           <input
             type="text"
             className="form-control"
             name="title"
-            value={product.title}
-            onChange={handleChange}
+            id="title"
+            {...register("title", { required: true })}
           />
-          {errors.title && (
-            <p className="text-red-500 text-sm">{errors.title}</p>
+          {errors.title?.message && (
+            <span className="text-danger">{errors.title.message}</span>
           )}
         </div>
         <div className="form-group mb-2">
@@ -125,11 +89,10 @@ const ProductForm = () => {
             type="number"
             name="price"
             id="price"
-            value={product.price}
-            onChange={handleChange}
+            {...register("price", { required: true, valueAsNumber: true })}
           />
-          {errors.price && (
-            <p className="text-red-500 text-sm">{errors.price}</p>
+          {errors.price?.message && (
+            <span className="text-danger">{errors.price.message}</span>
           )}
         </div>
         <div className="form-group mb-2">
@@ -138,16 +101,16 @@ const ProductForm = () => {
             type="text"
             className="form-control"
             name="description"
-            value={product.description}
-            onChange={handleChange}
+            id="description"
+            {...register("description", { required: true })}
           />
-          {errors.description && (
-            <p className="text-red-500 text-sm">{errors.description}</p>
+          {errors.description?.message && (
+            <span className="text-danger">{errors.description.message}</span>
           )}
         </div>
         <div className="form-group mb-2">
           <button type="submit" className="btn btn-primary">
-            {useLocation().pathname.includes("update") ? "Sửa" : "Thêm"}
+            {id ? "Sửa" : "Thêm"}
           </button>
         </div>
       </form>

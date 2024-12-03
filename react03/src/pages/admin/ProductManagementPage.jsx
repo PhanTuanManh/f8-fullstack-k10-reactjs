@@ -37,8 +37,6 @@ const ProductManagementPage = () => {
   };
 
   useEffect(() => {
-    console.log(111);
-
     fetchProducts();
   }, []);
 
@@ -77,7 +75,7 @@ const ProductManagementPage = () => {
                   <td>{product.description}</td>
                   <td className="flex gap-3 justify-center items-center">
                     <i
-                      class="fa-regular fa-pen-to-square text-blue-500 cursor-pointer text-2xl"
+                      className="fa-regular fa-pen-to-square text-blue-500 cursor-pointer text-2xl"
                       onClick={(e) => {
                         e.preventDefault();
                         window.location.href = `/admin/products/update/${product.id}`;
@@ -85,7 +83,7 @@ const ProductManagementPage = () => {
                     ></i>
 
                     <i
-                      class="fa-solid fa-trash-can text-red-500 cursor-pointer text-2xl"
+                      className="fa-solid fa-trash-can text-red-500 cursor-pointer text-2xl"
                       onClick={() => handleConfirmDelete(product)}
                     ></i>
                   </td>
